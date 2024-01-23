@@ -1,28 +1,15 @@
-import { AfterContentChecked, Component, DoCheck, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   template: `
     
-    <button (click)="teste()">teste</button>
+    <app-pipes/>
+    
     <!-- <router-outlet></router-outlet> -->
   `,
   styles: []
 })
-export class AppComponent implements DoCheck, OnInit, AfterContentChecked{
-  ngAfterContentChecked(): void {
-    console.log("AfterContentChecked")
-  }
-  
+export class AppComponent {
   title = 'angular15';
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-  ngDoCheck(): void {
-    console.log("Do check")
-  }
-
-  teste(){
-    this.title = "teste"
-  }
 }
